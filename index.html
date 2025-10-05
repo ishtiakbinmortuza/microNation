@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting...</title>
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content="0; url=index.php" />
+  <link rel="canonical" href="/" />
+  <style>
+    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; display:flex; align-items:center; justify-content:center; min-height:100vh; background:#0d1b2a; color:#fff; margin:0; }
+    .box { text-align:center; max-width:460px; padding:2rem 2.5rem; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); backdrop-filter: blur(6px); border-radius:18px; }
+    h1 { font-size:1.4rem; margin:0 0 .75rem; letter-spacing:.5px; }
+    p { margin:.25rem 0 .75rem; line-height:1.4; font-size:.95rem; }
+    a { color:#80dfff; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .spinner { width:40px; height:40px; border:4px solid rgba(255,255,255,.3); border-top-color:#80dfff; border-radius:50%; margin:1rem auto 0; animation:spin 0.85s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg);} }
+  </style>
+  <script>
+    // JS fallback (e.g., if meta refresh is blocked)
+    setTimeout(function(){ window.location.replace('index.php'); }, 50);
+  </script>
+</head>
+<body>
+  <div class="box">
+    <h1>Redirecting…</h1>
+    <p>You are being sent to the main site. If you are not redirected automatically, <a href="index.php">click here</a>.</p>
+    <div class="spinner" aria-hidden="true"></div>
+  </div>
+</body>
+</html>

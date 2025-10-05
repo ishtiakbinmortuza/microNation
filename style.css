@@ -1,0 +1,606 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    background-attachment: fixed;
+    color: #2d3748;
+    min-height: 100vh;
+}
+
+/* Navbar */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #48bb78;
+    background: rgba(72, 187, 120, 0.1);
+}
+
+/* Active nav link */
+nav ul li a.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.35);
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero-container {
+    height: 60vh;
+    background: url("qamarshan_flag.jpg") no-repeat center/cover;
+    position: relative;
+    overflow: visible;
+}
+
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(72, 187, 120, 0.3), rgba(56, 161, 105, 0.3));
+    pointer-events: none;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 4rem 3rem;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 10;
+    max-width: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-25%);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(72, 187, 120, 0.05) 0%, transparent 50%);
+    border-radius: 25px;
+    pointer-events: none;
+}
+
+.hero-card h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-card p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: #4a5568;
+    font-weight: 500;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-card .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 0.75rem;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-card .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(72, 187, 120, 0.4);
+    background: linear-gradient(135deg, #38a169, #2f855a);
+}
+
+/* Features Section */
+.features {
+    padding: 8rem 2rem 5rem 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    margin: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2d3748;
+    font-weight: 700;
+    position: relative;
+}
+
+.features h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    border-radius: 2px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-grid .btn {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(72, 187, 120, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.feature-grid .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.feature-grid .btn:hover::before {
+    left: 100%;
+}
+
+.feature-grid .btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(72, 187, 120, 0.4);
+    background: linear-gradient(135deg, #38a169, #2f855a);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(72, 187, 120, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9));
+}
+
+.video-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    margin: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.video-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+/* Form Page Styles */
+.form-main {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 3rem 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.form-header h1 {
+    font-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-header p {
+    color: #4a5568;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.form-content {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid rgba(72, 187, 120, 0.2);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #48bb78;
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid rgba(72, 187, 120, 0.2);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    font-family: inherit;
+}
+
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #48bb78;
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.application-form {
+    max-width: 600px;
+}
+
+.form-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.3);
+}
+
+.form-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(72, 187, 120, 0.4);
+    background: linear-gradient(135deg, #38a169, #2f855a);
+}
+
+/* Small control styles for admin pages */
+.btn-small {
+    padding: .45rem .65rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(72,187,120,.18);
+}
+.btn-small:hover { transform: translateY(-2px); }
+.btn-small.danger { background: linear-gradient(135deg, #ef4444, #e11d48); box-shadow: 0 6px 18px rgba(225,29,72,.12); }
+.select-small { padding:.45rem .6rem; border-radius:8px; border:1px solid rgba(72,187,120,.15); font-weight:600; background:rgba(255,255,255,.95); }
+
+.form-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.form-link {
+    color: #48bb78;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-link:hover {
+    color: #38a169;
+}
+
+.form-footer {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-footer p {
+    color: #4a5568;
+    margin: 0;
+}
+
+.form-link-primary {
+    color: #48bb78;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.form-link-primary:hover {
+    color: #38a169;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, rgba(56, 161, 105, 0.95), rgba(48, 140, 90, 0.95));
+    backdrop-filter: blur(15px);
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+    border-top: 3px solid rgba(72, 187, 120, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+footer p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+footer a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Passport Card Styles */
+.passport-card {
+  position: relative;
+  width: 650px;
+  max-width: 98vw;
+  margin: 32px auto;
+  border: 2px solid #2a3a5a;
+  border-radius: 12px;
+  background: #f7f7fa;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.passport-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('qamarshan_emblem.jpg') center center no-repeat;
+  background-size: 350px 350px;
+  opacity: 0.13;
+  z-index: 1;
+}
+.passport-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  padding: 24px 32px;
+}
+.passport-photo {
+  flex: 0 0 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32px;
+}
+.passport-photo img {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #2a3a5a;
+  background: #fff;
+}
+.passport-info {
+  flex: 1;
+}
+.passport-info h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.4em;
+  color: #2a3a5a;
+  font-weight: 700;
+}
+.passport-info h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.1em;
+  color: #3a4a6a;
+  font-weight: 500;
+}
+.passport-info table {
+  width: 100%;
+  font-size: 1em;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+.passport-info td {
+  padding: 2px 8px 2px 0;
+  color: #222;
+}
+.passport-info td:first-child {
+  font-weight: 600;
+  color: #2a3a5a;
+  width: 120px;
+}
+.passport-authority {
+  font-size: 0.98em;
+  color: #2a3a5a;
+  margin-top: 8px;
+  font-style: italic;
+}
+@media (max-width: 700px) {
+  .passport-content { flex-direction: column; padding: 16px 8px; }
+  .passport-photo { margin: 0 auto 16px auto; }
+}
